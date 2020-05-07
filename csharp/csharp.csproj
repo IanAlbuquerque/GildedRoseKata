@@ -66,7 +66,7 @@
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTests.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="ItemExtensions\ItemExtension.cs" />
+    <Compile Include="ItemExtensions\ItemDifferentRoutinesByTypeExtensions.cs" />
     <Compile Include="ItemExtensions\ItemQualityManipulationExtensions.cs" />
     <Compile Include="ItemExtensions\ItemTypeCheckExtensions.cs" />
     <Compile Include="ItemExtensions\ItemUpdateStrategiesExtensions.cs" />

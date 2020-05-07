@@ -1,6 +1,6 @@
 ﻿namespace csharp.ItemExtensions
 {
-    public static class ItemExtension
+    public static class ItemDifferentRoutinesByTypeExtensions
     {
         public static void UpdateQuality(this Item item)
         {
