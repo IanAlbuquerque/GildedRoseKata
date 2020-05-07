@@ -5,8 +5,8 @@
         public LegendaryItem(Item item) : base(item)
         {
         }
-        
-        public override void UpdateQuality()
+
+        protected override void UpdateQuality()
         {
 
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using csharp.Extensions;
+﻿using csharp.Extensions;
 
 namespace csharp.GildedRose
 {
@@ -14,32 +13,35 @@ namespace csharp.GildedRose
             {
                 if (this._item.IsLegendary())
                     return;
-                this._item.Quality = value.Clamped(Constants.MinItemQuality, Constants.MaxItemQuality);
+                this._item.Quality = value.Clamped(0, Constants.MaxItemQuality);
             }
         }
         
         protected int SellIn
         {
             get => this._item.SellIn;
-            set
+            private set
             {
                 if (this._item.IsLegendary())
                     return;
                 this._item.SellIn = value;
             }
         }
-
-        protected void DepleteItemQuality()
+        
+        public void TickDay()
         {
-            this._item.Quality = Constants.MinItemQuality;
+            this.UpdateQuality();
+            this.SellIn--;
         }
+
+        protected bool IsPastSellInDate => this.SellIn <= 0;
 
         protected GildedRoseItem(Item item)
         {
             this._item = item;
         }
-        
-        public virtual void UpdateQuality()
+
+        protected virtual void UpdateQuality()
         {
             
         }

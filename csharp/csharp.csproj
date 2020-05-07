@@ -69,7 +69,7 @@
     <Compile Include="GildedRose\GildedRoseItem.cs" />
     <Compile Include="GildedRose\GildedRoseItemFactory.cs" />
     <Compile Include="GildedRose\GildedRoseItems\AgedItem.cs" />
-    <Compile Include="GildedRose\GildedRoseItems\EventPassItem.cs" />
+    <Compile Include="GildedRose\GildedRoseItems\EventTicketItem.cs" />
     <Compile Include="GildedRose\GildedRoseItems\LegendaryItem.cs" />
     <Compile Include="GildedRose\GildedRoseItems\RegularItem.cs" />
     <Compile Include="Item.cs" />

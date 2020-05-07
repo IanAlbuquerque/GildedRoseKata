@@ -9,8 +9,8 @@ namespace csharp.GildedRose
         {
             if (item.IsLegendary())
                 return new LegendaryItem(item);
-            if (item.IsEventPass())
-                return new EventPassItem(item);
+            if (item.IsEventTicket())
+                return new EventTicketItem(item);
             if (item.IsAged())
                 return new AgedItem(item);
             

@@ -1,23 +1,21 @@
 ﻿namespace csharp.GildedRose.GildedRoseItems
 {
-    public class EventPassItem: GildedRoseItem
+    public class EventTicketItem: GildedRoseItem
     {
-        public EventPassItem(Item item) : base(item)
+        public EventTicketItem(Item item) : base(item)
         {
         }
-        
-        public override void UpdateQuality()
+
+        protected override void UpdateQuality()
         {
             if (this.SellIn <= 0)
-                this.DepleteItemQuality();
+                this.Quality = 0;
             else if (this.SellIn <= 5)
                 this.Quality += 3;
             else if (this.SellIn <= 10)
                 this.Quality += 2;
             else
                 this.Quality += 1;
-
-            this.SellIn--;
         }
     }
 }

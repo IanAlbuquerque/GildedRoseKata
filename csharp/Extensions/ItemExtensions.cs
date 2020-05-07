@@ -14,7 +14,7 @@ namespace csharp.Extensions
             return item.IsAgedBrie();
         }
         
-        public static bool IsEventPass(this Item item)
+        public static bool IsEventTicket(this Item item)
         {
             return item.IsBackstagePasses();
         }

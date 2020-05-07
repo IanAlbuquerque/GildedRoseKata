@@ -17,7 +17,7 @@ namespace csharp.GildedRose
         public void UpdateQuality()
         {
             for (int i = 0; i < this._items.Count; i++)
-                this._items[i].UpdateQuality();
+                this._items[i].TickDay();
         }
     }
 }

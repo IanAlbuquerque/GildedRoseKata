@@ -5,15 +5,13 @@
         public RegularItem(Item item) : base(item)
         {
         }
-        
-        public override void UpdateQuality()
+
+        protected override void UpdateQuality()
         {
-            if (this.SellIn <= 0)
+            if (this.IsPastSellInDate)
                 this.Quality -= 2;
             else
                 this.Quality -= 1;
-
-            this.SellIn--;
         }
     }
 }
