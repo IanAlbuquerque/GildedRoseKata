@@ -38,6 +38,15 @@ namespace csharp
         }
         
         [Test]
+        public void Given_RegularItem_Should_DecreaseQualityOnceWhenSellInIsOne()
+        {
+            IList<Item> items = ListWithItem("foo", 1, 10);
+            GildedRose app = new GildedRose(items);
+            app.UpdateQuality();
+            Assert.AreEqual(9, items[0].Quality);
+        }
+        
+        [Test]
         public void Given_AgedBrie_Should_IncreaseQualityAfterUpdate()
         {
             IList<Item> items = ListWithItem("Aged Brie", 2, 2);
