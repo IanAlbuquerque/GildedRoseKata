@@ -37,7 +37,7 @@ namespace csharp
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            GildedRose app = new GildedRose(Items);
+            GildedRose.GildedRose app = new GildedRose.GildedRose(Items);
 
 
             for (int i = 0; i < 31; i++)

@@ -63,13 +63,17 @@
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTests.cs" />
+    <Compile Include="GildedRose\GildedRose.cs" />
+    <Compile Include="GildedRose\GildedRoseItem.cs" />
+    <Compile Include="GildedRose\GildedRoseItemFactory.cs" />
+    <Compile Include="GildedRose\GildedRoseItems\AgedBrie.cs" />
+    <Compile Include="GildedRose\GildedRoseItems\BackstagePasses.cs" />
+    <Compile Include="GildedRose\GildedRoseItems\LegendaryItem.cs" />
+    <Compile Include="GildedRose\GildedRoseItems\RegularItem.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="ItemExtensions\ItemDifferentRoutinesByTypeExtensions.cs" />
     <Compile Include="ItemExtensions\ItemQualityManipulationExtensions.cs" />
     <Compile Include="ItemExtensions\ItemTypeCheckExtensions.cs" />
-    <Compile Include="ItemExtensions\ItemUpdateStrategiesExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
