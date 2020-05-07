@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using NUnit.Framework;
 
-namespace csharp
+namespace csharp.Tests
 {
     [TestFixture]
     public class ApprovalTest

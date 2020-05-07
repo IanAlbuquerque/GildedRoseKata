@@ -1,4 +1,5 @@
-﻿using csharp.GildedRose;
+﻿using csharp.External;
+using csharp.GildedRose;
 
 namespace csharp.Extensions
 {

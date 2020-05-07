@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using csharp.External;
 
-namespace csharp
+namespace csharp.Tests
 {
     public class Program
     {

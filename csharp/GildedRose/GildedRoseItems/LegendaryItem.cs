@@ -1,4 +1,6 @@
-﻿namespace csharp.GildedRose.GildedRoseItems
+﻿using csharp.External;
+
+namespace csharp.GildedRose.GildedRoseItems
 {
     public class LegendaryItem: GildedRoseItem
     {
