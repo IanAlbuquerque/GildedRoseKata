@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using csharp.Extensions;
 
 namespace csharp.GildedRose
 {
@@ -10,10 +11,7 @@ namespace csharp.GildedRose
         {
             this._items = new List<GildedRoseItem>();
             for (int i = 0; i < items.Count; i++)
-            {
-                GildedRoseItem gildedRoseItem = GildedRoseItemFactory.CreateFrom(items[i]);
-                this._items.Add(gildedRoseItem);
-            }
+                this._items.Add(items[i].AsGildedRoseItem());
         }
 
         public void UpdateQuality()

@@ -1,5 +1,5 @@
 ﻿using System;
-using csharp.ItemExtensions;
+using csharp.Extensions;
 
 namespace csharp.GildedRose
 {
@@ -14,10 +14,7 @@ namespace csharp.GildedRose
             {
                 if (this._item.IsLegendary())
                     return;
-                int newValue = value;
-                newValue = Math.Min(newValue, Constants.MaxItemQuality);
-                newValue = Math.Max(newValue, Constants.MinItemQuality);
-                this._item.Quality = newValue;
+                this._item.Quality = value.Clamped(Constants.MinItemQuality, Constants.MaxItemQuality);
             }
         }
         

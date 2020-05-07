@@ -1,5 +1,5 @@
-﻿using csharp.GildedRose.GildedRoseItems;
-using csharp.ItemExtensions;
+﻿using csharp.Extensions;
+using csharp.GildedRose.GildedRoseItems;
 
 namespace csharp.GildedRose
 {
@@ -9,10 +9,10 @@ namespace csharp.GildedRose
         {
             if (item.IsLegendary())
                 return new LegendaryItem(item);
-            if (item.IsBackstagePasses())
-                return new BackstagePasses(item);
-            if (item.IsAgedBrie())
-                return new AgedBrie(item);
+            if (item.IsEventPass())
+                return new EventPassItem(item);
+            if (item.IsAged())
+                return new AgedItem(item);
             
             return new RegularItem(item);
         }
