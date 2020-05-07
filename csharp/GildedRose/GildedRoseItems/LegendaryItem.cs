@@ -6,7 +6,7 @@
         {
         }
 
-        protected override void UpdateQuality()
+        public override void UpdateQuality()
         {
 
         }

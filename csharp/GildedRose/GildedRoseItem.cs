@@ -11,36 +11,20 @@ namespace csharp.GildedRose
             this._item = item;
         }
 
-        public void TickDay()
-        {
-            this.UpdateQuality();
-            this.SellIn--;
-        }
-
-        protected virtual void UpdateQuality()
+        public virtual void UpdateQuality()
         {
         }
         
         protected int Quality
         {
             get => this._item.Quality;
-            set
-            {
-                if (this._item.IsLegendary())
-                    return;
-                this._item.Quality = value.Clamped(0, Constants.MaxItemQuality);
-            }
+            set => this._item.Quality = value.Clamped(0, Constants.MaxItemQuality);
         }
         
         protected int SellIn
         {
             get => this._item.SellIn;
-            private set
-            {
-                if (this._item.IsLegendary())
-                    return;
-                this._item.SellIn = value;
-            }
+            set => this._item.SellIn = value;
         }
         
         protected bool IsPastSellInDate => this.SellIn <= 0;
