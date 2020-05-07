@@ -5,7 +5,22 @@ namespace csharp.GildedRose
     public abstract class GildedRoseItem
     {
         private readonly Item _item;
+        
+        protected GildedRoseItem(Item item)
+        {
+            this._item = item;
+        }
 
+        public void TickDay()
+        {
+            this.UpdateQuality();
+            this.SellIn--;
+        }
+
+        protected virtual void UpdateQuality()
+        {
+        }
+        
         protected int Quality
         {
             get => this._item.Quality;
@@ -28,22 +43,6 @@ namespace csharp.GildedRose
             }
         }
         
-        public void TickDay()
-        {
-            this.UpdateQuality();
-            this.SellIn--;
-        }
-
         protected bool IsPastSellInDate => this.SellIn <= 0;
-
-        protected GildedRoseItem(Item item)
-        {
-            this._item = item;
-        }
-
-        protected virtual void UpdateQuality()
-        {
-            
-        }
     }
 }
