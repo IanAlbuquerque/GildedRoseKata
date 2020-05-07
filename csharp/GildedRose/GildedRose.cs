@@ -5,19 +5,17 @@ namespace csharp.GildedRose
 {
     public class GildedRose
     {
-        private readonly IList<GildedRoseItem> _items;
+        private readonly IEnumerable<GildedRoseItem> _items;
         
-        public GildedRose(IList<Item> items)
+        public GildedRose(IEnumerable<Item> items)
         {
-            this._items = new List<GildedRoseItem>();
-            for (int i = 0; i < items.Count; i++)
-                this._items.Add(items[i].AsGildedRoseItem());
+            this._items = items.AsGildedRoseItemList();
         }
 
         public void UpdateQuality()
         {
-            for (int i = 0; i < this._items.Count; i++)
-                this._items[i].UpdateQuality();
+            foreach (GildedRoseItem item in this._items)
+                item.UpdateQuality();
         }
     }
 }
