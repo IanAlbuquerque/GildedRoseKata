@@ -1,8 +1,13 @@
-﻿namespace csharp
+﻿namespace csharp.ItemExtensions
 {
-    public static class ItemExtension
+    public static class ItemTypeCheckExtensions
     {
-        public static bool IsSulfuras(this Item item)
+        public static bool IsLegendary(this Item item)
+        {
+            return item.IsSulfuras();
+        }
+        
+        private static bool IsSulfuras(this Item item)
         {
             return item.Name == Constants.Sulfuras;
         }
