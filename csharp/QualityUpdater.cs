@@ -17,51 +17,63 @@
         private void UpdateAsBackstagePasses(Item item)
         {
             if (item.SellIn <= 0)
-                item.Quality = 0;
+                this.ZeroOutQuality(item);
             else if(item.SellIn <= 5)
-                item.Quality += 3;
+                this.IncreaseQuality(item, 3);
             else if (item.SellIn <= 10)
-                item.Quality += 2;
+                this.IncreaseQuality(item, 2);
             else
-                item.Quality += 1;
-            
-            if (item.Quality < 0)
-                item.Quality = 0;
-            if (item.Quality > 50)
-                item.Quality = 50;
-            
+                this.IncreaseQuality(item, 1);
+
             item.SellIn--;
         }
 
         private void UpdateAsAgedBrie(Item item)
         {
             if (item.SellIn <= 0)
-                item.Quality += 2;
+                this.IncreaseQuality(item, 2);
             else
-                item.Quality += 1;
-            if (item.Quality < 0)
-                item.Quality = 0;
-            if (item.Quality > 50)
-                item.Quality = 50;
+                this.IncreaseQuality(item, 1);
+            
             item.SellIn--;
         }
 
         private void UpdateAsRegular(Item item)
         {
             if (item.SellIn <= 0)
-                item.Quality -= 2;
+                this.DecreaseQuality(item, 2);
             else
-                item.Quality -= 1;
-            if (item.Quality < 0)
-                item.Quality = 0;
-            if (item.Quality > 50)
-                item.Quality = 50;
+                this.DecreaseQuality(item, 1);
+            
             item.SellIn--;
         }
 
         private void UpdateAsSulfuras(Item item)
         {
             
+        }
+        
+        private void IncreaseQuality(Item item, int value)
+        {
+            int newQuality = item.Quality + value;
+            if (newQuality > 50)
+                newQuality = 50;
+            item.Quality = newQuality;
+        }
+        
+                
+        private void DecreaseQuality(Item item, int value)
+        {
+            int newQuality = item.Quality - value;
+            if (newQuality < 0)
+                newQuality = 0;
+            item.Quality = newQuality;
+        }
+        
+        
+        private void ZeroOutQuality(Item item)
+        {
+            item.Quality = 0;
         }
     }
 }
