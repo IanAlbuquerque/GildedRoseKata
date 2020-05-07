@@ -13,6 +13,8 @@ namespace csharp.GildedRose
                 return new EventTicketItem(item);
             if (item.IsAged())
                 return new AgedItem(item);
+            if (item.IsConjured())
+                return new ConjuredItem(item);
             
             return new RegularItem(item);
         }

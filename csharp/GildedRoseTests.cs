@@ -182,6 +182,24 @@ namespace csharp
             app.UpdateQuality();
             Assert.AreEqual(50, items[0].Quality);
         }
+        
+        [Test]
+        public void Given_ConjuredItem_Should_DegradeInQualityTwiceAsFastRegularly()
+        {
+            IList<Item> items = ListWithItem("Conjured Mana Cake", 4, 10);
+            GildedRose.GildedRose app = new GildedRose.GildedRose(items);
+            app.UpdateQuality();
+            Assert.AreEqual(8, items[0].Quality);
+        }
+        
+        [Test]
+        public void Given_ConjuredItem_Should_DegradeInQualityTwiceAsFastAlsoPastSellIn()
+        {
+            IList<Item> items = ListWithItem("Conjured Mana Cake", 0, 10);
+            GildedRose.GildedRose app = new GildedRose.GildedRose(items);
+            app.UpdateQuality();
+            Assert.AreEqual(6, items[0].Quality);
+        }
 
         private static IList<Item> ListWithItem(string name, int sellIn, int quality)
         {

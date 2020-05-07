@@ -71,6 +71,7 @@
     <Compile Include="GildedRose\GildedRoseItems\AgedItem.cs" />
     <Compile Include="GildedRose\GildedRoseItems\EventTicketItem.cs" />
     <Compile Include="GildedRose\GildedRoseItems\LegendaryItem.cs" />
+    <Compile Include="GildedRose\GildedRoseItems\ConjuredItem.cs" />
     <Compile Include="GildedRose\GildedRoseItems\RegularItem.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />

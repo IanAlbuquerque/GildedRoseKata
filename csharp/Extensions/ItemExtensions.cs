@@ -18,6 +18,11 @@ namespace csharp.Extensions
         {
             return item.IsBackstagePasses();
         }
+
+        public static bool IsConjured(this Item item)
+        {
+            return item.IsConjuredManaCake();
+        }
         
         private static bool IsSulfuras(this Item item)
         {
@@ -32,6 +37,11 @@ namespace csharp.Extensions
         private static bool IsAgedBrie(this Item item)
         {
             return item.Name == Constants.AgedBrie;
+        }
+        
+        private static bool IsConjuredManaCake(this Item item)
+        {
+            return item.Name == Constants.ConjuredManaCake;
         }
         
         public static GildedRoseItem AsGildedRoseItem(this Item item)
